@@ -22,15 +22,15 @@ app.use(function(req, res, next) {
     next();
 });
 
-// let smtp_login = process.env.SMTP_LOGIN || '---';
-// let smtp_password = process.env.SMTP_PASSWORD || '---';
+let smtp_login = process.env.SMTP_LOGIN;
+let smtp_password = process.env.SMTP_PASSWORD;
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     secure: false,
     auth: {
-        user: 'nodemailertest.123',
-        pass: "AZsxdc123"
+        user: smtp_login,
+        pass: smtp_password
     },
 });
 

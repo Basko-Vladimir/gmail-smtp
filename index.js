@@ -22,14 +22,14 @@ app.use(function(req, res, next) {
     next();
 });
 
-let smtp_login = process.env.SMTP_LOGIN || '---';
-let smtp_password = process.env.SMTP_PASSWORD || '---';
+// let smtp_login = process.env.SMTP_LOGIN || '---';
+// let smtp_password = process.env.SMTP_PASSWORD || '---';
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: smtp_login,
-        pass: smtp_password
+        user: '1989bvg@gmail.com',
+        pass: "Bas'ko_190389"
     },
 });
 

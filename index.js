@@ -21,6 +21,10 @@ let transporter = nodemailer.createTransport({
     },
 });
 
+app.get('https://portfolio-server-smtp-nodejs.herokuapp.com', async function (req, res) {
+   res.send('Hello world');
+});
+
 app.post('https://portfolio-server-smtp-nodejs.herokuapp.com/sendMessage', async function (req, res) {
     const {message, name, email} = req.body;
     await transporter.sendMail({
@@ -35,8 +39,6 @@ app.post('https://portfolio-server-smtp-nodejs.herokuapp.com/sendMessage', async
 
     res.send(`Message sent!`)
 });
-
-
 
 app.listen(port, function () {
     console.log('Example app listening on port 3000!');

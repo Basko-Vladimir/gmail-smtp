@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-const whitelist = ['http://localhost:3000/Portfolio', 'https://basko-vladimir.github.io/Portfolio'];
+const whitelist = ['http://localhost:3000', 'https://basko-vladimir.github.io/Portfolio'];
 app.use(cors({
     origin: whitelist,
     methods: "GET,PUT,POST,DELETE, OPTIONS",

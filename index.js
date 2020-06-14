@@ -9,15 +9,19 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const SMTP_LOGIN = process.env.SMTP_LOGIN;
+const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
+let port = process.env.PORT || 3010;
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: '1989bvg@gmail.com',
-        pass: "Bas'ko_190389",
+        user: SMTP_LOGIN,
+        pass: SMTP_PASSWORD
     },
 });
 
-app.post('/sendMessage', async function (req, res) {
+app.post('/https://portfolio-server-smtp-nodejs.herokuapp.com/', async function (req, res) {
     const {message, name, email} = req.body;
     await transporter.sendMail({
         from: `HR\'s message trough my portfolio`,
@@ -32,6 +36,8 @@ app.post('/sendMessage', async function (req, res) {
     res.send(`Message sent!`)
 });
 
-app.listen(3010, function () {
+
+
+app.listen(port, function () {
     console.log('Example app listening on port 3000!');
 });

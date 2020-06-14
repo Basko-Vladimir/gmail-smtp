@@ -27,9 +27,10 @@ app.use(function(req, res, next) {
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
+    secure: false,
     auth: {
-        user: '1989bvg@gmail.com',
-        pass: "Bas'ko_190389"
+        user: 'nodemailertest.123',
+        pass: "AZsxdc123"
     },
 });
 

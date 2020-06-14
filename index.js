@@ -21,7 +21,7 @@ let transporter = nodemailer.createTransport({
     },
 });
 
-app.post('/https://portfolio-server-smtp-nodejs.herokuapp.com/', async function (req, res) {
+app.post('https://portfolio-server-smtp-nodejs.herokuapp.com/sendMessage', async function (req, res) {
     const {message, name, email} = req.body;
     await transporter.sendMail({
         from: `HR\'s message trough my portfolio`,

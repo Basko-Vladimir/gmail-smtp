@@ -39,6 +39,7 @@ app.get('/', async function (req, res) {
 
 app.post('/sendMessage', async function (req, res) {
     const {message, name, email} = req.body;
+    console.log(message,name, email )
     await transporter.sendMail({
         from: `HR\'s message trough my portfolio`,
         to: '1989bvg@gmail.com',

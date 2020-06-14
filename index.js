@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-const whitelist = ['http://localhost:3000', 'https://basko-vladimir.github.io/Portfolio'];
+const whitelist = ['http://localhost:3000/Portfolio', 'https://basko-vladimir.github.io/Portfolio'];
 app.use(cors({
     origin: whitelist,
     methods: "GET,PUT,POST,DELETE, OPTIONS",
@@ -14,12 +14,6 @@ app.use(cors({
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// app.use((request, response, next) => {
-//     response.header("Access-Control-Allow-Origin", "*");
-//     response.header("Access-Control-Allow-Headers", "Content-Type");
-//     next();
-// });
 
 let smtp_login = process.env.SMTP_LOGIN;
 let smtp_password = process.env.SMTP_PASSWORD;
